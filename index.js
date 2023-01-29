@@ -18,7 +18,7 @@ class Telephone{
 
     dialPhoneNumber(phoneNumber){
         if(this.phoneNumbers.has(phoneNumber)){
-            this.notify(`${phoneNumber} \n Now Dialling ${phoneNumber}`)
+            this.notify(phoneNumber)
         } else{
             this.notify(`${phoneNumber} has not been added to the phone list`)
         }
@@ -46,9 +46,16 @@ class Observer{
     }
 }
 
+class Observer2{
+    constructor(){}
+    update(data){
+        console.log(`Now Dialling ${data}`);
+    }
+}
+
 const telcom = new Telephone();
 const line1 = new Observer();
-const line2 = new Observer();
+const line2 = new Observer2();
 
 telcom.addPhoneNumber('+23407035506513')
 telcom.addPhoneNumber('+23407030006513')
